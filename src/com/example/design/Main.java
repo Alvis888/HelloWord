@@ -41,4 +41,11 @@ public class Main {
         say=SayFactory.createSay("world");
         say.say();
     }
+
+    /**
+     * 建造者模式
+     */
+    private static void build(){
+
+    }
 }

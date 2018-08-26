@@ -1,5 +1,6 @@
 package com.example.design;
 
+import com.example.design.Build.*;
 import com.example.design.sampleFactory.Say;
 import com.example.design.sampleFactory.SayFactory;
 import com.example.design.singleton.SingletonWithThread;
@@ -14,6 +15,7 @@ public class Main {
         System.out.println("---------------------------------------------------------");
         SampleFactory();
         System.out.println("---------------------------------------------------------");
+        build();
     }
 
     /**
@@ -46,6 +48,21 @@ public class Main {
      * 建造者模式
      */
     private static void build(){
+        System.out.println("单例模式---建造者");
+        // 店长
+        Decorator decorator=new Decorator();
+        // 做什么东西
+        HelloWorldBuilder builderHello=new Hello();
+        HelloWorldBuilder builderWorld=new World();
+
+        // 开始做
+        decorator.construct(builderHello);
+        HelloWorldProduct hello=builderHello.getProduct();
+        hello.show();
+
+        decorator.construct(builderWorld);
+        HelloWorldProduct world=builderWorld.getProduct();
+        world.show();
 
     }
 }
